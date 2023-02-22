@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,59 @@ namespace WpfTeam05
         public SqlWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnConnect_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //string connectionString = "Trusted_Connection=True;";
+                string connectionString = "user id = pxluser;";
+                connectionString += "Password = pxluser;";
+                connectionString += $@"Server={TxtServer.Text};";
+                connectionString += $"Database={TxtDb.Text}";
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open(); conn.Close(); MessageBox.Show("connection ok!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private SqlConnection GetConnection()
+        {
+            SqlConnection conn;
+
+            try
+            {
+                //string connectionString = "Trusted_Connection=True;";
+                string connectionString = "user id = pxluser;";
+                connectionString += "Password = pxluser;";
+                connectionString += $@"Server={TxtServer.Text};";
+                connectionString += $"Database={TxtDb.Text}";
+                conn = new SqlConnection(connectionString);conn.Open();
+                conn.Close();
+                return conn;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            }
+
+        private void BtnGetData_Click(object sender, RoutedEventArgs e)
+        {
+            try 
+            {
+                string cmd = $"Select * from {TxtTable.Text}";
+                SqlCommand sql = new SqlCommand(cmd, GetConnection());
+                SqlDataAdapter da = new SqlDataAdapter(sql);
+                DataTable dt = new DataTable(); da.Fill(dt);
+                DgdSql.ItemsSource = dt.DefaultView; 
+            } 
+            catch (Exception ex) 
+            { MessageBox.Show(ex.Message); }
         }
     }
 }

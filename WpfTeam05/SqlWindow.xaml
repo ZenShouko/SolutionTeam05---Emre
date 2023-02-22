@@ -16,11 +16,12 @@
                 <Label Content="Database:" Width="100"></Label>
                 <TextBox Name="TxtDb" Width="200" Margin="5"></TextBox>
             </WrapPanel>
-            <Button x:Name="BtnConnect" Content="Connect" Width="100"></Button>
+            <Button x:Name="BtnConnect" Content="Connect" Width="100" Click="BtnConnect_Click"></Button>
             <WrapPanel>
                 <Label Content="Table:" Width="100"></Label>
                 <TextBox Name="TxtTable" Width="200" Margin="5"></TextBox>
             </WrapPanel>
+            <Button x:Name="BtnGetData" Content="Get Data" Width="100" Click="BtnGetData_Click"></Button>
             <DataGrid x:Name="DgdSql" Width="350" Height="250"></DataGrid>
         </StackPanel>
     </Grid>

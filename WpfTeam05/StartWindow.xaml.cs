@@ -27,14 +27,18 @@ namespace WpfTeam05
             {
                 ListStudents.Items.Add(item);
             }
-
-            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             SqlWindow window = new SqlWindow();
             window.ShowDialog();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            StudentWindow window = new StudentWindow();
+            window.Show();
         }
     }
 }

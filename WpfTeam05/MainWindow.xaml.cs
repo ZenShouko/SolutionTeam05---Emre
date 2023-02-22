@@ -29,6 +29,7 @@ namespace WpfTeam05
         {
             StartWindow window = new StartWindow();
             window.Show();
+            Close();
         }
     }
 }

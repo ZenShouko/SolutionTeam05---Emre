@@ -43,6 +43,5 @@ namespace ClassLibTeam05.Data.Repositories
         { 
             StudentList.Add(student);
         }
-
     }
 }

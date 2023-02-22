@@ -10,7 +10,7 @@
         <!--MenuBar-->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Student"/>
+                <MenuItem Header="Student" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Sql Window" Click="MenuItem_Click"/>
                 <MenuItem Header="Close"/>
             </MenuItem>
