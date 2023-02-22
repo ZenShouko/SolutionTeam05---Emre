@@ -31,8 +31,8 @@ namespace WpfTeam05
             try
             {
                 //string connectionString = "Trusted_Connection=True;";
-                string connectionString = "user id = pxluser;";
-                connectionString += "Password = pxluser;";
+                string connectionString = "user id = sa;";
+                connectionString += "Password = pxl;";
                 connectionString += $@"Server={TxtServer.Text};";
                 connectionString += $"Database={TxtDb.Text}";
                 SqlConnection conn = new SqlConnection(connectionString);
@@ -51,8 +51,8 @@ namespace WpfTeam05
             try
             {
                 //string connectionString = "Trusted_Connection=True;";
-                string connectionString = "user id = pxluser;";
-                connectionString += "Password = pxluser;";
+                string connectionString = "user id = sa;";
+                connectionString += "Password = pxl;";
                 connectionString += $@"Server={TxtServer.Text};";
                 connectionString += $"Database={TxtDb.Text}";
                 conn = new SqlConnection(connectionString);conn.Open();
