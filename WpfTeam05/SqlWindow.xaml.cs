@@ -55,7 +55,7 @@ namespace WpfTeam05
                 connectionString += "Password = pxl;";
                 connectionString += $@"Server={TxtServer.Text};";
                 connectionString += $"Database={TxtDb.Text}";
-                conn = new SqlConnection(connectionString);conn.Open();
+                conn = new SqlConnection(connectionString); conn.Open();
                 conn.Close();
                 return conn;
             }
@@ -63,7 +63,7 @@ namespace WpfTeam05
             {
                 throw new Exception(ex.Message, ex);
             }
-            }
+        }
 
         private void BtnGetData_Click(object sender, RoutedEventArgs e)
         {
